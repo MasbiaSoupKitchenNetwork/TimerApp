@@ -1,16 +1,9 @@
+import readchar
 import time
 import yaml
 import os
 
 class TimedEvent():
-    """
-    timed_event (can't make instances)
-    - paperwork
-    - getting food
-    - loading food
-    (different in that they save to a different place)
-    (stored here: toggle method, start and end times, save to file)
-    """
 
     def __init__(self, activity="form_filling"):
         self.is_counting = False # each boolean is named after a question bc than its value is clear
@@ -21,6 +14,15 @@ class TimedEvent():
     def start_counting(self):
         self.start_time = time.time()
         print "I've started counting"
+        while (True): # True always
+            saved_char = readchar.readchar()
+            if saved_char == "\x03" or saved_char == "\x04" or saved_char == "\x05":
+                break # break when you press ctl+C, ctl+D, ctl+Z
+            if saved_char != " ":
+                print "You didn't press space, you pressed: " + saved_char # if you press not-space, it reminds you to press space and tells you it hasn't stopped/started recording
+            else:
+                self.stop_counting()
+                break
 
     def stop_counting(self):
         end_time = time.time() # gives float
@@ -28,13 +30,6 @@ class TimedEvent():
         elapsed_time = int(end_time - self.start_time)
         print "The elapsed time is " + str(elapsed_time) + " seconds"
         self.save_data_to_yaml_file(end_time, elapsed_time)
-
-    def toggle_counting(self):
-        if self.is_counting:
-            self.stop_counting()
-        else:
-            self.start_counting()
-        self.is_counting = not self.is_counting
 
 
     def save_data_to_yaml_file(self, end_time, elapsed_time):
