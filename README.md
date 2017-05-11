@@ -15,6 +15,10 @@ Once you select an event to time from the menu, you will begin timing. To stop t
 In this example, a client managed to fill out your form in one second! <br />
 ![Example data saved for one entry. Your task took just one second!](https://github.com/MasbiaSoupKitchenNetwork/TimerApp/blob/master/one_entry_preview_image.png) <br />
 Hitting any key will bring you back to the menu and you may begin timing the next event.
+You may exit the program from the menu or any time with <code>ctrl+c</code>. If you use <code>ctrl+c</code> to exit while a event is bring timed, you will stop recording without saving and return to the menu.
 
 ## Troubleshooting
+### Version
 This program is written in Python 3. If you have only Python 2, as is still default on macs, you'll need to download and run the program with Python 3.
+### Stop accidental recordings
+If you begin recording an event accidentially, you can stop without saving by hitting <code>ctrl+c</code>, which will stop the recording and return to the menu.
