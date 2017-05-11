@@ -1,8 +1,10 @@
 # Timer App
 
-This terminal app used to help the folks at the Masbia Soup Kitchen Network assess the efficiency of the process they use to service their clients.
+This terminal app used to help the folks at the Masbia Soup Kitchen Network assess the efficiency of the process they use to provide for their clients.
 
-Once the program is installed, it will create files in the same folder the program is run from. Data is saved after every timed event, so no reason to stress if you accidentally close the program.
+Once the program is installed, it will create files in the same folder the program is run from. Data is saved after every timed event, so no reason to stress if you accidentally close the program. <br />
+
+<script type="text/javascript" src="https://asciinema.org/a/9ui1ugfhh0g3mov675pewdh6k.js" id="asciicast-9ui1ugfhh0g3mov675pewdh6k" async></script> <br />
 
 ## Installation
 Download <code>timed_event.py</code> and <code>menu.py</code> to the folder you would like to store both your data and the program in.
