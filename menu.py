@@ -3,8 +3,8 @@ from timed_event import TimedEvent
 
 ## define menu option ##
 menu = {}
-menu['1']="Time form filling." 
-menu['2']="Time food grabbing."
+menu['1']="Time form filling" 
+menu['2']="Time food grabbing"
 menu['3']="Time food loading"
 menu['4']="Exit"
 
