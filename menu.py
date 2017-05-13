@@ -36,19 +36,5 @@ while (True):
 		print "You're about about leave"
 		break
 	else: 
-		print "Learn how to type"
-	readchar.readchar() # haults the clearing of the screen until a selection is entered so the selection is printed 
-
-
-
-# my_list = []
-# while (True):
-# 	x = random.randint(0,10)
-# 	if x == random.randint(0,5):
-# 		break
-# 	if x % 2 == 0 and x % 3 ==0:
-# 		continue
-# 	my_list = my_list + [x]
-# 	if len(my_list) == 10: 
-# 		break
-# print my_list
+		print "Please select press any key and then select 1-4"
+	readchar.readchar() # halts the clearing of the screen until a selection is entered so the selection is printed 
