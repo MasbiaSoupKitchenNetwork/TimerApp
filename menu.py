@@ -13,6 +13,13 @@ form_filling = TimedEvent("form_filling")
 food_grabbing = TimedEvent("food_grabbing")
 food_loading = TimedEvent("food_loading")
 
+def ask_if_want_to_leave():
+	print "Exit (y/n): "
+	ready_to_leave = readchar.readchar()
+	if ready_to_leave == "y" or ready_to_leave == "Y":
+		print "You're about about leave"
+		exit()
+
 while (True):
 	options = menu.keys()
 	options.sort() # since keys don't have an order, we order them
@@ -22,7 +29,7 @@ while (True):
 	print "Please enter your selection: "
 	selection = readchar.readchar()
 	if selection == "\x03" or selection == "\x04" or selection == "\x05": # cmd+d twice to select all
-		break
+		ask_if_want_to_leave()
 	if selection == "1":
 		print "Time form filling"
 		form_filling.start_counting()
@@ -33,8 +40,7 @@ while (True):
 		print "Time for food loading"
 		food_loading.start_counting()
 	elif selection == "4":
-		print "You're about about leave"
-		break
+		ask_if_want_to_leave()
 	else: 
 		print "Please select press any key and then select 1-4"
-	readchar.readchar() # halts the clearing of the screen until a selection is entered so the selection is printed 
+	

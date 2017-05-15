@@ -2,6 +2,7 @@ import readchar
 import time
 import yaml
 import os
+import sys
 
 class TimedEvent():
 
@@ -13,15 +14,18 @@ class TimedEvent():
 
     def start_counting(self):
         self.start_time = time.time()
-        print "I've started counting"
+        print "I've started counting. Press esc to cancel the counting. Spacebar stops and records the count."
         while (True): # True always
             saved_char = readchar.readchar()
             if saved_char == "\x03" or saved_char == "\x04" or saved_char == "\x05":
-                break # break when you press ctl+C, ctl+D, ctl+Z
+                sys.exit() # when you press ctl+C, ctl+D, ctl+Z 
+            if saved_char == "\x1b":
+                break # ESC
             if saved_char != " ":
                 print "You didn't press space, you pressed: " + saved_char # if you press not-space, it reminds you to press space and tells you it hasn't stopped/started recording
             else:
                 self.stop_counting()
+                readchar.readchar() # halts the clearing of the screen until a selection is entered so the selection is printed 
                 break
 
     def stop_counting(self):
@@ -63,5 +67,7 @@ class TimedEvent():
             file.write(yaml.dump(new_data))
             file.seek(0) # move file cursor from the end of the file to the beginning so we can read it
             print file.read()
+
+
 
 
